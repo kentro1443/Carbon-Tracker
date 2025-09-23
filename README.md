@@ -10,8 +10,7 @@ This repository contains two complete versions of the application:
 
 ## 🚀 Live Demos
 
-*   **Flask Version is live on Render:** `[INSERT YOUR RENDER URL HERE]`
-*   **Streamlit Version is live on Streamlit Cloud:** `[INSERT YOUR STREAMLIT CLOUD URL HERE]`
+*   **Streamlit Version is live on Streamlit Cloud:** `https://greentracker.streamlit.app/`
 
 ---
 
