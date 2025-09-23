@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Emission Calculator</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #f4f4f9; color: #333; margin: 0; padding: 2rem; }
+        .container { max-width: 700px; margin: auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; text-align: center; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+        input, select { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        select[multiple] { height: 120px; }
+        button { width: 100%; padding: 0.75rem; background-color: #3498db; color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; transition: background-color 0.3s; }
+        button:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculate Your Carbon Footprint</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            
+            <div class="form-group"><label for="Body Type">Body Type:</label><select name="Body Type"><option>underweight</option><option>normal</option><option>overweight</option><option>obese</option></select></div>
+            <div class="form-group"><label for="Sex">Sex:</label><select name="Sex"><option>male</option><option>female</option></select></div>
+            <div class="form-group"><label for="Diet">Diet:</label><select name="Diet"><option>omnivore</option><option>pescatarian</option><option>vegetarian</option><option>vegan</option></select></div>
+            <div class="form-group"><label for="How Often Shower">How Often Do You Shower?:</label><select name="How Often Shower"><option>daily</option><option>twice a day</option><option>more frequently</option><option>less frequently</option></select></div>
+            <div class="form-group"><label for="Heating Energy Source">Heating Energy Source:</label><select name="Heating Energy Source"><option>natural gas</option><option>electricity</option><option>wood</option><option>coal</option></select></div>
+            <div class="form-group"><label for="Transport">Main Mode of Transport:</label><select name="Transport"><option>walk/bicycle</option><option>public</option><option>private</option></select></div>
+            <div class="form-group"><label for="Vehicle Type">Vehicle Type (if applicable):</label><select name="Vehicle Type"><option value=" ">N/A</option><option>petrol</option><option>diesel</option><option>lpg</option><option>electric</option><option>hybrid</option></select></div>
+            <div class="form-group"><label for="Social Activity">Social Activity Frequency:</label><select name="Social Activity"><option>never</option><option>sometimes</option><option>often</option></select></div>
+            <div class="form-group"><label for="Frequency of Traveling by Air">Frequency of Air Travel:</label><select name="Frequency of Traveling by Air"><option>never</option><option>rarely</option><option>frequently</option><option>very frequently</option></select></div>
+            <div class="form-group"><label for="Waste Bag Size">Waste Bag Size:</label><select name="Waste Bag Size"><option>small</option><option>medium</option><option>large</option><option>extra large</option></select></div>
+            <div class="form-group"><label for="Energy efficiency">Energy Efficiency Focus:</label><select name="Energy efficiency"><option>No</option><option>Sometimes</option><option>Yes</option></select></div>
+
+            <div class="form-group">
+                <label for="Recycling">What do you recycle? (Hold Ctrl/Cmd to select multiple):</label>
+                <select name="Recycling" id="Recycling" multiple>
+                    <option value="Glass">Glass</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Paper">Paper</option>
+                    <option value="Plastic">Plastic</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Cooking_With">What do you cook with? (Hold Ctrl/Cmd to select multiple):</label>
+                <select name="Cooking_With" id="Cooking_With" multiple>
+                    <option value="Airfryer">Airfryer</option>
+                    <option value="Grill">Grill</option>
+                    <option value="Microwave">Microwave</option>
+                    <option value="Oven">Oven</option>
+                    <option value="Stove">Stove</option>
+                </select>
+            </div>
+
+            <div class="form-group"><label for="Monthly Grocery Bill">Monthly Grocery Bill ($):</label><input type="number" name="Monthly Grocery Bill" value="150" step="any"></div>
+            <div class="form-group"><label for="Vehicle Monthly Distance Km">Vehicle Monthly Distance (Km):</label><input type="number" name="Vehicle Monthly Distance Km" value="0" step="any"></div>
+            <div class="form-group"><label for="Waste Bag Weekly Count">Weekly Waste Bags:</label><input type="number" name="Waste Bag Weekly Count" value="3" step="any"></div>
+            <div class="form-group"><label for="How Long TV PC Daily Hour">Daily TV/PC Hours:</label><input type="number" name="How Long TV PC Daily Hour" value="5" step="any"></div>
+            <div class="form-group"><label for="How Many New Clothes Monthly">Monthly New Clothes:</label><input type="number" name="How Many New Clothes Monthly" value="3" step="any"></div>
+            <div class="form-group"><label for="How Long Internet Daily Hour">Daily Internet Hours:</label><input type="number" name="How Long Internet Daily Hour" value="8" step="any"></div>
+
+            <button type="submit">Predict Carbon Emission</button>
+        </form>
+    </div>
+</body>
+</html>
