@@ -10,7 +10,7 @@ This repository contains two complete versions of the application:
 
 ## 🚀 Live Demos
 
-*   **Streamlit Version is live on Streamlit Cloud:** `[https://greentracker.streamlit.app/](https://carbon-tracker.streamlit.app/)`
+*   **Streamlit Version is live on Streamlit Cloud:** `https://carbon-tracker.streamlit.app/`
 
 ---
 
